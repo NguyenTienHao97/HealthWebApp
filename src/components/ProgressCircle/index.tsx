@@ -1,16 +1,17 @@
 import * as React from 'react';
-import CircularProgress, {
-    CircularProgressProps,
-} from '@mui/material/CircularProgress';
+import CircularProgress, { CircularProgressProps, } from '@mui/material/CircularProgress';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
+import { useStyles } from './styles';
 
 function CircularProgressWithLabel(
     props: CircularProgressProps & { value: number },
 ) {
+    const classes: any = useStyles();
+    
     return (
         <Box sx={{ position: 'relative', display: 'inline-flex' }}>
-            <CircularProgress style={{width: 181, height: 181, color:"white"}} variant="determinate" {...props} />
+            <CircularProgress thickness={1} size={5} style={{width: 181, height: 181, color:"white"}} variant="determinate" {...props} />
             <Box
                 sx={{
                     top: 0,
@@ -34,7 +35,7 @@ function CircularProgressWithLabel(
 }
 
 export default function ProgressCircle() {
-    const [progress, setProgress] = React.useState(75);
+    const [progress, setProgress] = React.useState(15);
 
     React.useEffect(() => {
         const timer = setInterval(() => {

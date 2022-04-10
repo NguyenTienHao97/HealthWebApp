@@ -5,17 +5,16 @@ export const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         container: {
             flex: 1,
-            display: 'flex',
-            position: 'fixed',
+            position: 'static',
             bottom: 0,
-            left: 0,
+            right: 0,
+            display: 'flex',
             height: 128,
             width: '100%',
             backgroundColor: `${colors.dark_500}`,
-            alignItems: 'center',
-            justifyContent: 'center',
         },
         wrapLinkFooter: {
+            flex: 1,
             display: 'flex',
             alignItems: 'center',
         },

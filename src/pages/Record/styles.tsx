@@ -5,12 +5,11 @@ export const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         container: {
             flex: 1,
-            height: 'auto',
+            marginTop: 30,
+            marginBottom: 30,
+            marginLeft: 40,
+            marginRight: 40,
+            height: '100%'
         },
-        wrapSection: {
-            flex: 1,
-            display: 'flex',
-            flexDirection: 'row',
-        }
     }),
 );

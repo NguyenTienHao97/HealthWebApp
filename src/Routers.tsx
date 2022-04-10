@@ -1,6 +1,7 @@
 import { Suspense, useEffect } from 'react';
-import { Switch, Route } from "react-router-dom";
+import { Routes as Switch, Route } from "react-router-dom";
 import navigations from './naviagtions';
+import Footer from '../src/components/Footer';
 
 function Routers(props: any) {
     return (
@@ -8,16 +9,16 @@ function Routers(props: any) {
             <Switch>
                 {
                     navigations.map((navigation: any, index: any) => {
-                        console.log('navigation?.path', navigation?.path);
                         return <Route
                             key={index}
                             path={navigation?.path}
-                            exact={navigation?.exact}
-                            render={(props: any) => <navigation.component {...props} />}
+                            element={<navigation.component {...navigation} />}
                         />
                     })
                 }
+                
             </Switch>
+            <Footer />
         </Suspense>
     )
 }

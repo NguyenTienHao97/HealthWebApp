@@ -3,14 +3,9 @@ import { colors } from '../../config/config';
 
 export const useStyles = makeStyles((theme: Theme) =>
     createStyles({
-        container: {
-            flex: 1,
-            height: 'auto',
-        },
-        wrapSection: {
-            flex: 1,
-            display: 'flex',
-            flexDirection: 'row',
+        styleBox: {
+            position: 'relative', 
+            display: 'inline-flex'
         }
     }),
 );

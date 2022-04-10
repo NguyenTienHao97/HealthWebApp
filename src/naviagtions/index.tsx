@@ -1,13 +1,20 @@
 import React from 'react';
 
 const HomePage = React.lazy(() => import ("../pages/Home"));
+const RecordPage = React.lazy(() => import("../pages/Record"));
 
-const navigations: any = [{
-    path: '/home',
-    exact: true,
-    name: "Home",
-    component: HomePage,
-}];
+const navigations: any = [
+    {
+        path: '/',
+        name: "Home",
+        component: HomePage,
+    },
+    {
+        path: '/record',
+        name: "Record",
+        component: RecordPage,
+    }
+];
 
 let _navigations = [].concat(navigations);
 
