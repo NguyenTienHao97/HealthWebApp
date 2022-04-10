@@ -83,13 +83,13 @@ class ChartRecord extends PureComponent {
     const props: any = this.props;
     return (
       <div className={props.classes.container}>
-        <div style={{flex: 1, display: 'flex', margin: 5}}>
-            <p style={{color:'white', marginRight: 5}}>
-                {"BODY RECORD"}
-            </p>
-            <p style={{color:'white'}}>
-                {"2021.05.21"}
-            </p>
+        <div style={{ flex: 1, display: 'flex', margin: 5 }}>
+          <p style={{ color: 'white', marginRight: 5 }}>
+            {"BODY RECORD"}
+          </p>
+          <p style={{ color: 'white' }}>
+            {"2021.05.21"}
+          </p>
         </div>
         <ResponsiveContainer width="100%" height={312}>
           <LineChart
@@ -110,6 +110,23 @@ class ChartRecord extends PureComponent {
             <Line type="monotone" dataKey="pv" stroke="#82ca9d" />
           </LineChart>
         </ResponsiveContainer>
+        <div style={{flex: 1, display: 'flex', alignItems: 'center', padding: 20,}}>
+          <button style={{width: 70, height: 30, backgroundColor: 'white', borderRadius: 15, color: 'rgb(255, 204, 56)', borderWidth: 0}}>
+            button1
+          </button>
+          <div style={{width: 5}}></div>
+          <button style={{width: 70, height: 30, backgroundColor: 'white', borderRadius: 15, color: 'rgb(255, 204, 56)', borderWidth: 0}}>
+            button2
+          </button>
+          <div style={{width: 5}}></div>
+          <button style={{width: 70, height: 30, backgroundColor: 'white', borderRadius: 15, color: 'rgb(255, 204, 56)', borderWidth: 0}}>
+            button3
+          </button>
+          <div style={{width: 5}}></div>
+          <button style={{width: 70, height: 30, backgroundColor: 'rgb(255, 204, 56)', borderRadius: 15, color: 'white', fontWeight: 'bold', borderWidth: 1,}}>
+            button4
+          </button>
+        </div>
       </div>
     );
   }

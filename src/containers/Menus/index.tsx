@@ -2,8 +2,8 @@ import React from 'react';
 import { menus } from './menus';
 import { useStyles } from './styles';
 import Grid from '@mui/material/Grid';
-import Paper from '@mui/material/Paper';
 import CakeItem from '../../components/CakeItem';
+import ImageIconArrow from '../../assets/arrow.png';
 
 function Menus(props: any) {
     const classes: any = useStyles();
@@ -15,7 +15,9 @@ function Menus(props: any) {
                     menus.map((menu: any) => {
                         return (
                             <button className={classes.styleMenuItem}>
-                                <p className={classes.styleTextNameMenu}>{menu.name}</p>
+                                <img 
+                                    src={menu.icon}
+                                />
                             </button>
                         )
                     })
@@ -36,8 +38,10 @@ function Menus(props: any) {
                     }
                 </Grid>
                 <div style={{ flex: 1, display: 'flex', marginLeft: 10, marginRight: 10, alignItems: 'center', justifyContent: 'center' }}>
-                    <button style={{ flex: 1, width: 50, height: 50, borderRadius: 25, display: 'flex', alignItems: 'center', justifyContent: 'center', borderWidth: 1 }}>
-                        ^
+                    <button style={{ flex: 1, background: 'transparent', width: 50, height: 50, borderRadius: 25, display: 'flex', alignItems: 'center', justifyContent: 'center', borderWidth: 0 }}>
+                        <img 
+                            src={ImageIconArrow}
+                        />
                     </button>
                 </div>
             </div>

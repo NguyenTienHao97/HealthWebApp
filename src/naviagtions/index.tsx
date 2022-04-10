@@ -2,6 +2,7 @@ import React from 'react';
 
 const HomePage = React.lazy(() => import ("../pages/Home"));
 const RecordPage = React.lazy(() => import("../pages/Record"));
+const ColumnPage = React.lazy(() => import("../pages/Column"));
 
 const navigations: any = [
     {
@@ -13,6 +14,11 @@ const navigations: any = [
         path: '/record',
         name: "Record",
         component: RecordPage,
+    },
+    {
+        path: '/column',
+        name: "Column",
+        component: ColumnPage,
     }
 ];
 

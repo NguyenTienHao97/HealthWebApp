@@ -9,7 +9,9 @@ export const useStyles = makeStyles((theme: Theme) =>
             marginBottom: 30,
             marginLeft: 40,
             marginRight: 40,
-            height: '100%'
+            height: '100%',
+            display: 'flex',
+            flexDirection: 'row',
         },
     }),
 );
