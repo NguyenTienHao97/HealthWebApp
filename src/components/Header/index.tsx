@@ -17,18 +17,21 @@ const headers = [
         name: "自分の記録",
         icon: Note,
         minWidth: 200,
+        to: "/column"
     },
     {
         id: 2,
         name: "チャレンジ",
         icon: Record,
         minWidth: 200,
+        to: "/record"
     },
     {
         id: 3,
         name: "お知らせ",
         icon: Notification,
         minWidth: 200,
+        to: "/notification"
     }
 ];
 
@@ -58,32 +61,42 @@ function Header(props: IPropsHeaderType) {
                                         key={Math.random() * 19990000 + index.toString()}
                                         className={classes.wrapLinkHeader}
                                         style={{ minWidth: header.minWidth }}>
-                                        <img 
-                                            alt={`${index}-${header.name}`}
-                                            width={32}
-                                            height={32}
-                                            style={{objectFit: 'fill', marginRight: 5}}
-                                            src={header.icon}
-                                        />
+                                        <div style={header.id === 3 ? {display: 'flex', flexDirection: 'row'} : {display: 'flex', flexDirection: 'row', marginRight: 15}}>
+                                            <img
+                                                alt={`${index}-${header.name}`}
+                                                width={32}
+                                                height={32}
+                                                style={{ objectFit: 'fill', marginRight: 0 }}
+                                                src={header.icon}
+                                            />
+                                            {
+                                                header.id === 3 ? (
+                                                    <div className={classes.wrapBage}>
+                                                        <p className={classes.styleBage}>{"3"}</p>
+                                                    </div>
+                                                ) : null
+                                            }
+                                        </div>
                                         <Link
-                                            to={{}}
+                                            to={header.to}
                                             onClick={() => { }}
-                                            style={{fontFamily: "Noto Sans JP"}}
+                                            style={{ fontFamily: "Noto Sans JP" }}
                                             className={classes.styleTextHeader}>
                                             {
                                                 header?.name || ""
                                             }
                                         </Link>
+
                                     </div>
                                 )
                             })
                         }
                     </div>
-                    <img 
+                    <img
                         alt="menu"
                         width={32}
                         height={32}
-                        style={{objectFit: 'fill'}}
+                        style={{ objectFit: 'fill' }}
                         src={IconMenu}
                     />
                 </Toolbar>

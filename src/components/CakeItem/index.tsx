@@ -13,7 +13,7 @@ function CakeItem(props: any) {
             }}
         >
             <div style={{height: 272}}></div>
-            <div style={{backgroundColor: 'green', position: 'relative', left: 0, bottom: 0, right: 0, height: 40, width: 120, display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+            <div className={classes.wrapLabel}>
                 <p style={{color: 'white'}}>{"05.21.Morning"}</p>
             </div>
         </div >

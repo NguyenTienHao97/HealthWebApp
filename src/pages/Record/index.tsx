@@ -4,6 +4,7 @@ import RecordCols from '../../containers/RecordCols';
 import ChartRecord from '../../containers/ChartRecord';
 import MyDiarys from '../../containers/MyDiarys';
 import ImageIconArrow from '../../assets/arrow.png';
+import MyExercises from '../../containers/MyExercises';
 
 function Record(props: any) {
     const classes: any = useStyles();
@@ -13,10 +14,11 @@ function Record(props: any) {
             <div>
                 <RecordCols />
                 <ChartRecord />
+                <MyExercises />
                 <MyDiarys />
             </div>
-            <div style={{ flex: 1, display: 'flex', marginLeft: 10, marginRight: 10, alignItems: 'center', justifyContent: 'center' }}>
-                <button style={{ flex: 1, background: 'transparent', width: 50, height: 50, borderRadius: 25, display: 'flex', alignItems: 'center', justifyContent: 'center', borderWidth: 0 }}>
+            <div className={classes.wrapBtnScrollTop}>
+                <button className={classes.styleBtnScrollTop}>
                     <img
                         src={ImageIconArrow}
                     />

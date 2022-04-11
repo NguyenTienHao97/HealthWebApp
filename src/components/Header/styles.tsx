@@ -43,6 +43,20 @@ export const useStyles = makeStyles((theme: Theme) =>
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
+        },
+        wrapBage: {
+            width: 20, 
+            height: 20, 
+            borderRadius: 10, 
+            display: 'flex', 
+            justifyContent: 'center', 
+            alignItems: 'center', 
+            top: -5, left: -15, position: 'relative', backgroundColor: 'rgb(237, 108, 17)'
+        },
+        styleBage: {
+            marginTop: 0, 
+            marginBottom: 0, 
+            fontSize: 10
         }
     }),
 );

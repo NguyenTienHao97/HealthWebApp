@@ -71,8 +71,8 @@ function MyDiarys(props: any) {
                 }
             </div>
             <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: 10, marginBottom: 10 }}>
-                <button style={{ width: 200 }}>
-                    <p>
+                <button style={{ borderRadius: 5, border: '0px solid grey', width: 200, backgroundImage:  `linear-gradient(to right, rgb(255, 204, 56), rgb(225, 181, 58), rgb(225, 150, 67)`}}>
+                    <p style={{color: 'white'}}>
                         {"Load more...."}
                     </p>
                 </button>

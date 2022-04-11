@@ -13,5 +13,24 @@ export const useStyles = makeStyles((theme: Theme) =>
             display: 'flex',
             flexDirection: 'row',
         },
+        wrapBtnScrollTop: {
+            flex: 1, 
+            display: 'flex', 
+            marginLeft: 10, 
+            marginRight: 10, 
+            alignItems: 'center', 
+            justifyContent: 'center'
+        },
+        styleBtnScrollTop: {
+            flex: 1, 
+            background: 'transparent', 
+            width: 50, 
+            height: 50, 
+            borderRadius: 25, 
+            display: 'flex', 
+            alignItems: 'center', 
+            justifyContent: 'center', 
+            borderWidth: 0
+        }
     }),
 );
