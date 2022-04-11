@@ -4,11 +4,13 @@ import { useStyles } from './styles';
 function CakeItem(props: any) {
     const classes: any = useStyles();
 
+    const image = require(`../../assets/${props?.item?.image}`);
+
     return (
         <div
             className={classes.styleImage}
             style={{
-                backgroundImage: `url("${props?.image}")`,
+                backgroundImage: `url(${image})`,
                 objectFit: 'fill'
             }}
         >

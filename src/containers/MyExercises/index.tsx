@@ -90,7 +90,7 @@ function MyExercises(props: any) {
     }
 
     return (
-        <div className={classes.container}>
+        <div ref={props.myExerciesRef} className={classes.container}>
             <div className={classes.wrapTitle}>
                 <p className={classes.styleTextTile}>{"MY EXERCISE"}</p>
                 <p className={classes.styleTextDateTime}>{"2021.05.21"}</p>

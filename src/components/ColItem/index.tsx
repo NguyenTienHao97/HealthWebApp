@@ -5,7 +5,7 @@ function ColItem(props: any) {
     const classes: any = useStyles();
 
     return (
-        <div style={{ width: 250, height: 250, display: 'flex', marginLeft: 20, marginRight: 20, flex: 1, backgroundColor: 'rgb(255,204,56)', padding: 20 }}>
+        <div onClick={props.onClick} style={{ width: 250, height: 250, display: 'flex', marginLeft: 20, marginRight: 20, flex: 1, backgroundColor: 'rgb(255,204,56)', padding: 20 }}>
             <div
                 style={{
                     flex: 1,

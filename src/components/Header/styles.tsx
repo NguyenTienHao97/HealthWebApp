@@ -57,6 +57,11 @@ export const useStyles = makeStyles((theme: Theme) =>
             marginTop: 0, 
             marginBottom: 0, 
             fontSize: 10
+        },
+        styleLoginNavigate: {
+            border: '1px solid grey', 
+            paddingLeft: 5, 
+            paddingRight: 5
         }
     }),
 );

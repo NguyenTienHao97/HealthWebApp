@@ -82,7 +82,7 @@ class ChartRecord extends PureComponent {
   render() {
     const props: any = this.props;
     return (
-      <div className={props.classes.container}>
+      <div ref={props.charRecordRef} className={props.classes.container}>
         <div style={{ flex: 1, display: 'flex', margin: 5 }}>
           <p style={{ color: 'white', marginRight: 5 }}>
             {"BODY RECORD"}

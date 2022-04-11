@@ -8,8 +8,10 @@ import Logo from '../../assets/logo.png';
 import Note from '../../assets/note.png';
 import Record from '../../assets/record.png';
 import Notification from '../../assets/notification.png';
-import IconMenu from '../../assets/menu.png';
 import { IPropsHeaderType } from './type';
+import MyDrawer from '../MyDrawer';
+import { useNavigate } from 'react-router-dom';
+import { useCookies } from 'react-cookie';
 
 const headers = [
     {
@@ -31,12 +33,19 @@ const headers = [
         name: "お知らせ",
         icon: Notification,
         minWidth: 200,
-        to: "/notification"
+        to: "/"
     }
 ];
 
 function Header(props: IPropsHeaderType) {
     const classes = useStyles();
+    const navigate: any = useNavigate();
+    const [cookies, setCookie] = useCookies();
+
+    function onLogout(){
+        setCookie('access_token', "", { path: "/" });
+        navigate("/login");
+    }
 
     return (
         <div className={classes.grow}>
@@ -61,7 +70,7 @@ function Header(props: IPropsHeaderType) {
                                         key={Math.random() * 19990000 + index.toString()}
                                         className={classes.wrapLinkHeader}
                                         style={{ minWidth: header.minWidth }}>
-                                        <div style={header.id === 3 ? {display: 'flex', flexDirection: 'row'} : {display: 'flex', flexDirection: 'row', marginRight: 15}}>
+                                        <div style={header.id === 3 ? { display: 'flex', flexDirection: 'row' } : { display: 'flex', flexDirection: 'row', marginRight: 15 }}>
                                             <img
                                                 alt={`${index}-${header.name}`}
                                                 width={32}
@@ -92,13 +101,20 @@ function Header(props: IPropsHeaderType) {
                             })
                         }
                     </div>
-                    <img
-                        alt="menu"
-                        width={32}
-                        height={32}
-                        style={{ objectFit: 'fill' }}
-                        src={IconMenu}
-                    />
+                    <MyDrawer>
+                        <div
+                            onClick={() => navigate("/login")} 
+                            className={classes.styleLoginNavigate}
+                        >
+                            <p>{"Đăng nhập"}</p>
+                        </div>
+                        <div
+                            onClick={() => onLogout()} 
+                            className={classes.styleLoginNavigate}
+                        >
+                            <p>{"Đăng xuất"}</p>
+                        </div>
+                    </MyDrawer>
                 </Toolbar>
             </AppBar>
             <Toolbar />

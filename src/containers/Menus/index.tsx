@@ -1,5 +1,4 @@
 import React from 'react';
-import { menus } from './menus';
 import { useStyles } from './styles';
 import Grid from '@mui/material/Grid';
 import CakeItem from '../../components/CakeItem';
@@ -12,11 +11,14 @@ function Menus(props: any) {
         <div className={classes.container}>
             <div className={classes.wrapMenu}>
                 {
-                    menus.map((menu: any) => {
+                    props?.meals && props?.meals.map((meal: any, index: number) => {
                         return (
-                            <button className={classes.styleMenuItem}>
-                                <img 
-                                    src={menu.icon}
+                            <button
+                                key={Math.random() * 10000 + index.toString()}
+                                onClick={() => props.callbackFilterByTypeMeal(meal)}
+                                className={classes.styleMenuItem}>
+                                <img
+                                    src={require(`../../assets/${meal.image}`)}
                                 />
                             </button>
                         )
@@ -26,33 +28,43 @@ function Menus(props: any) {
             <div style={{ flex: 1, display: 'flex', flexDirection: 'row' }}>
                 <Grid className={classes.wrapItems} container spacing={1} xl={12} lg={12} xs={12} md={12} sm={12} >
                     {
-                        menus[0].items.map((item: any) => {
+                        props?.items?.length > 0 ? props?.items?.map((item: any, index: number) => {
                             return (
-                                <Grid item xl={3} lg={3} xs={3} md={3} sm={3}>
+                                <Grid key={Math.random() * 10000 + index.toString()} item xl={3} lg={3} xs={3} md={3} sm={3}>
                                     <CakeItem
-                                        image={item.image}
+                                        item={item}
                                     />
                                 </Grid>
                             )
-                        })
+                        }) : <div style={{ flex: 1, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                            <p>{"empty"}</p>
+                        </div>
                     }
                 </Grid>
                 <div className={classes.wrapBtnScrollTop}>
                     <button className={classes.styleBtnScrollTop}>
-                        <img 
+                        <img
                             src={ImageIconArrow}
                         />
                     </button>
                 </div>
             </div>
+            {
+                props.curItems.length === props.items.length ? (
+                    null
+                ) : (
+                    <div className={classes.wrapBtnLoadmore}>
+                        <button
+                            onClick={() => props.callbackLoadMoreItem()}
+                            style={{ borderRadius: 5, border: '0px solid grey', width: 200, backgroundImage: `linear-gradient(to right, rgb(255, 204, 56), rgb(225, 181, 58), rgb(225, 150, 67)` }}>
+                            <p style={{ color: 'white' }}>
+                                {"Load more...."}
+                            </p>
+                        </button>
+                    </div>
+                )
+            }
 
-            <div className={classes.wrapBtnLoadmore}>
-                <button style={{ borderRadius: 5, border: '0px solid grey', width: 200, backgroundImage:  `linear-gradient(to right, rgb(255, 204, 56), rgb(225, 181, 58), rgb(225, 150, 67)`}}>
-                    <p style={{color: 'white'}}>
-                        {"Load more...."}
-                    </p>
-                </button>
-            </div>
         </div>
     )
 }

@@ -24,7 +24,7 @@ const cols = [
     },
     {
         id: 3,
-        name: "MY EXERCISE",
+        name: "MY DIARY",
         descrip: "flkadsj",
         image: ImageMyRecommend03,
         width: 300,
@@ -35,12 +35,23 @@ const cols = [
 function RecordCols(props: any) {
     const classes: any = useStyles();
 
+    function onScrollToElement(col: any) {
+        if (col.id === 1) {
+            props.callbackHandleScrollToElementChartRecord();
+        } else if (col.id === 2) {
+            props.callbackHandleScrollToElementMyExercies();
+        } else {
+            props.callbackHandleScrollToElementMyDiaries();
+        }
+    }
+
     return (
         <div className={classes.container}>
             {
                 cols.map((col: any) => {
                     return (
-                        <ColItem 
+                        <ColItem
+                            onClick={() => onScrollToElement(col)}
                             col={col}
                         />
                     )
