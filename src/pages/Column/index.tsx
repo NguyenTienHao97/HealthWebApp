@@ -1,32 +1,32 @@
 import React from 'react';
 import { useStyles } from './styles';
 import Products from '../../containers/Products';
-import ImageIconArrow from '../../assets/arrow.png';
+import ImageIconArrow from '../../assets/svgs/icon_scroll.svg';
 
 const columns = [
     {
         id: 1,
         name: "RECOMMENDED",
         type: "COLUMN",
-        text: "abcd"
+        text: "オススメ"
     },
     {
         id: 2,
         name: "RECOMMENDED",
         type: "DIET",
-        text: "abcdef"
+        text: "ダイエット"
     },
     {
         id: 3,
         name: "RECOMMENDED",
         type: "BEATY",
-        text: "abcdefgh"
+        text: "美容"
     },
     {
         id: 4,
         name: "RECOMMENDED",
         type: "HEALTH",
-        text: "abcdefgh"
+        text: "健康"
     }
 ]
 
@@ -42,7 +42,8 @@ function Column(props: any) {
                             return (
                                 <div key={Math.random() * 1000 + index.toString()} className={classes.girdItem}>
                                     <p className={classes.styleText}>{column.name}</p>
-                                    <p style={{ textDecoration: 'underline', textDecorationColor: 'white' }} className={classes.styleText}>{column.type}</p>
+                                    <p style={{ marginBottom: 5 }} className={classes.styleText}>{column.type}</p>
+                                    <div className={classes.styleDivide}></div>
                                     <p className={classes.styleText1}>{column.text}</p>
                                 </div>
                             )
@@ -51,8 +52,8 @@ function Column(props: any) {
                 </div>
                 <Products />
             </div>
-            <div style={{ paddingLeft: 10, paddingRight: 10, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <button style={{ background: 'transparent', width: 50, height: 50, borderRadius: 25, display: 'flex', alignItems: 'center', justifyContent: 'center', borderWidth: 0 }}>
+            <div className={classes.wrapImageArrow}>
+                <button className={classes.styleBtnArrow}>
                     <img
                         src={ImageIconArrow}
                     />

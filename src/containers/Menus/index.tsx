@@ -2,7 +2,7 @@ import React from 'react';
 import { useStyles } from './styles';
 import Grid from '@mui/material/Grid';
 import CakeItem from '../../components/CakeItem';
-import ImageIconArrow from '../../assets/arrow.png';
+import ImageIconArrow from '../../assets/svgs/icon_scroll.svg';
 
 function Menus(props: any) {
     const classes: any = useStyles();
@@ -18,14 +18,14 @@ function Menus(props: any) {
                                 onClick={() => props.callbackFilterByTypeMeal(meal)}
                                 className={classes.styleMenuItem}>
                                 <img
-                                    src={require(`../../assets/${meal.image}`)}
+                                    src={require(`../../assets/svgs/${meal.image}`)}
                                 />
                             </button>
                         )
                     })
                 }
             </div>
-            <div style={{ flex: 1, display: 'flex', flexDirection: 'row' }}>
+            <div className={classes.wrapCakeItem}>
                 <Grid className={classes.wrapItems} container spacing={1} xl={12} lg={12} xs={12} md={12} sm={12} >
                     {
                         props?.items?.length > 0 ? props?.items?.map((item: any, index: number) => {
@@ -36,7 +36,7 @@ function Menus(props: any) {
                                     />
                                 </Grid>
                             )
-                        }) : <div style={{ flex: 1, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                        }) : <div className={classes.wrapEmpty}>
                             <p>{"empty"}</p>
                         </div>
                     }
@@ -56,9 +56,9 @@ function Menus(props: any) {
                     <div className={classes.wrapBtnLoadmore}>
                         <button
                             onClick={() => props.callbackLoadMoreItem()}
-                            style={{ borderRadius: 5, border: '0px solid grey', width: 200, backgroundImage: `linear-gradient(to right, rgb(255, 204, 56), rgb(225, 181, 58), rgb(225, 150, 67)` }}>
+                            className={classes.styleBtnLoadmore}>
                             <p style={{ color: 'white' }}>
-                                {"Load more...."}
+                                {"自分の日記をもっと見る"}
                             </p>
                         </button>
                     </div>

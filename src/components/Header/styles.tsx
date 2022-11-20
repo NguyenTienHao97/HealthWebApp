@@ -1,16 +1,10 @@
-import { alpha, makeStyles, Theme, createStyles } from '@material-ui/core/styles';
+import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
 import { colors } from '../../config/config';
-
-// 64
-// 32x32
 
 export const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         grow: {
             flexGrow: 1,
-        },
-        menuButton: {
-            marginRight: theme.spacing(2),
         },
         title: {
             display: 'none',
@@ -33,7 +27,7 @@ export const useStyles = makeStyles((theme: Theme) =>
         },
         styleMenuHeader: {
             borderBottom: '1px solid grey',
-            height: 50,
+            height: 64,
             display: 'flex',
             alignItems: 'center',
             paddingLeft: 5
@@ -59,7 +53,7 @@ export const useStyles = makeStyles((theme: Theme) =>
             fontSize: 10
         },
         styleLoginNavigate: {
-            border: '1px solid grey', 
+            borderBottom: '1px solid grey',
             paddingLeft: 5, 
             paddingRight: 5
         }

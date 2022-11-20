@@ -1,5 +1,4 @@
-import { alpha, makeStyles, Theme, createStyles } from '@material-ui/core/styles';
-import { colors } from '../../config/config';
+import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
 
 export const useStyles = makeStyles((theme: Theme) =>
     createStyles({

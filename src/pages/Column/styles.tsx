@@ -9,8 +9,8 @@ export const useStyles = makeStyles((theme: Theme) =>
             flexDirection: 'row',
             marginTop: 30,
             marginBottom: 30,
-            marginLeft: 40,
-            marginRight: 40,
+            marginLeft: 160,
+            marginRight: 160,
         },
         wrapContent: {
             flex: 1,
@@ -25,7 +25,7 @@ export const useStyles = makeStyles((theme: Theme) =>
         },
         girdItem: {
             backgroundColor: 'rgb(46, 46, 46)',
-            border: '1px solid grey',
+            border: '0px solid grey',
             flexDirection: 'column',
             display: 'flex',
             alignItems: 'center',
@@ -35,10 +35,32 @@ export const useStyles = makeStyles((theme: Theme) =>
         styleText: {
             color: 'rgb(255, 204, 56)',
             marginBottom: 0,
+            marginTop: 0
         },
         styleText1: {
             color: colors.light,
             marginBottom: 0,
+        },
+        styleDivide: {
+            width: 56, 
+            border: "1px solid white"
+        },
+        wrapImageArrow: {
+            paddingLeft: 10, 
+            paddingRight: 10, 
+            display: 'flex', 
+            alignItems: 'center', 
+            justifyContent: 'center'
+        },
+        styleBtnArrow: {
+            background: 'transparent', 
+            width: 50, 
+            height: 50, 
+            borderRadius: 25, 
+            display: 'flex', 
+            alignItems: 'center', 
+            justifyContent: 'center', 
+            borderWidth: 0
         }
     }),
 );

@@ -8,6 +8,7 @@ import { useNavigate } from 'react-router-dom';
 import { getMeals } from '../../apis/home';
 import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
+import NotLogin from '../../components/NotLogin';
 
 function Home(props: any) {
     const classes: any = useStyles();
@@ -69,7 +70,7 @@ function Home(props: any) {
                         </div>
                         {
                             isLoading ? (
-                                <Box sx={{ display: 'flex', alignItems: 'center', paddingTop: 10, paddingBottom: 10, justifyContent: 'center', }}>
+                                <Box className={classes.wrapLoading}>
                                     <CircularProgress />
                                 </Box>
                             ) : (
@@ -85,12 +86,7 @@ function Home(props: any) {
 
                     </>
                 ) : (
-                    <div style={{ height: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
-                        <p>{"Bạn chưa đăng nhập!"}</p>
-                        <button style={{ height: 50, width: 200 }} onClick={() => navigate("/login")}>
-                            {"Đăng nhập"}
-                        </button>
-                    </div>
+                    <NotLogin />
                 )
             }
         </div>

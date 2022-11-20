@@ -11,7 +11,7 @@ function CakeItem(props: any) {
             className={classes.styleImage}
             style={{
                 backgroundImage: `url(${image})`,
-                objectFit: 'fill'
+                objectFit: 'contain'
             }}
         >
             <div style={{height: 272}}></div>

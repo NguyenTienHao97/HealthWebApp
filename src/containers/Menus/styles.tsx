@@ -5,7 +5,10 @@ export const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         container: {
             flex: 1,
-            margin: 20,
+            paddingLeft: 160,
+            paddingRight: 160,
+            paddingTop: 20,
+            paddingBottom: 20,
         },
         wrapMenu: {
             display: 'flex',
@@ -57,6 +60,23 @@ export const useStyles = makeStyles((theme: Theme) =>
             justifyContent: 'center', 
             marginTop: 10, 
             marginBottom: 10
+        },
+        wrapCakeItem: {
+            flex: 1, 
+            display: 'flex', 
+            flexDirection: 'row'
+        },
+        wrapEmpty: {
+            flex: 1, 
+            display: 'flex', 
+            justifyContent: 'center',
+            alignItems: 'center'
+        },
+        styleBtnLoadmore: {
+            borderRadius: 5, 
+            border: '0px solid grey',
+            width: 200,
+            backgroundImage: `linear-gradient(32.95deg, #FFCC21 8.75%, #FF963C 86.64%)`
         }
     }),
 );

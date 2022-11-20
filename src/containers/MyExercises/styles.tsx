@@ -14,20 +14,24 @@ export const useStyles = makeStyles((theme: Theme) =>
             flex: 1,
             display: 'flex',
             paddingLeft: 10,
+            alignItems: 'center'
         },
         styleTextTile: {
             color: colors.light,
             marginRight: 5,
+            marginBottom: 0,
         },
         styleTextDateTime: {
             color: colors.light,
             fontSize: 18,
+            marginBottom: 0,
         },
         wrapTable: {
             flex: 1,
             display: 'flex',
             flexDirection: 'row',
             margin: 10,
+            marginTop: 0,
         },
         styleUl: {
             width: '100%',

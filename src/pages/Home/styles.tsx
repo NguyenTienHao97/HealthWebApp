@@ -1,5 +1,4 @@
-import { alpha, makeStyles, Theme, createStyles } from '@material-ui/core/styles';
-import { colors } from '../../config/config';
+import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
 
 export const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -11,6 +10,13 @@ export const useStyles = makeStyles((theme: Theme) =>
             flex: 1,
             display: 'flex',
             flexDirection: 'row',
+        },
+        wrapLoading: {
+            display: 'flex', 
+            alignItems: 'center', 
+            paddingTop: 10, 
+            paddingBottom: 10, 
+            justifyContent: 'center',
         }
     }),
 );

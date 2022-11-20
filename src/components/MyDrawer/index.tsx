@@ -3,8 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import Button from '@material-ui/core/Button';
 import clsx from 'clsx';
-import DehazeIcon from '@material-ui/icons/Dehaze';
-import IconMenu from '../../assets/menu.png';
+import IconMenu from '../../assets/svgs/icon_menu.svg';
 
 const useStyles = makeStyles({
     list: {
@@ -78,4 +77,4 @@ function MyDrawer(props: any) {
     );
 }
 
-export default MyDrawer;
+export default React.memo(MyDrawer);

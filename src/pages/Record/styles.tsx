@@ -7,8 +7,8 @@ export const useStyles = makeStyles((theme: Theme) =>
             flex: 1,
             marginTop: 30,
             marginBottom: 30,
-            marginLeft: 40,
-            marginRight: 40,
+            marginLeft: 160,
+            marginRight: 160,
             height: '100%',
             display: 'flex',
             flexDirection: 'row',
@@ -31,6 +31,13 @@ export const useStyles = makeStyles((theme: Theme) =>
             alignItems: 'center', 
             justifyContent: 'center', 
             borderWidth: 0
+        },
+        wrapLoading: {
+            display: 'flex', 
+            alignItems: 'center', 
+            paddingTop: 10, 
+            paddingBottom: 10, 
+            justifyContent: 'center',
         }
     }),
 );

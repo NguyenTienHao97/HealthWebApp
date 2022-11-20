@@ -1,20 +1,20 @@
-import { alpha, makeStyles, Theme, createStyles } from '@material-ui/core/styles';
+import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
 import { colors } from '../../config/config';
 
 export const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         container: {
             flex: 1,
+            display: 'flex',
             position: 'static',
             bottom: 0,
             right: 0,
-            display: 'flex',
             height: 128,
-            width: '100%',
+            paddingLeft: 160,
+            paddingRight: 160,
             backgroundColor: `${colors.dark_500}`,
         },
         wrapLinkFooter: {
-            flex: 1,
             display: 'flex',
             alignItems: 'center',
         },
@@ -26,11 +26,9 @@ export const useStyles = makeStyles((theme: Theme) =>
             textDecoration: 'none',
         },
         wrapLink: {
-            flex: 8,
+            flex: 1,
             display: 'flex',
-            flexDirection: 'row',
-            marginLeft: 20,
-            marginRight: 20,
+            flexDirection: 'row'
         }
     }),
 );

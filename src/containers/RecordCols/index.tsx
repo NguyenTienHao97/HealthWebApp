@@ -9,7 +9,7 @@ const cols = [
     {
         id: 1,
         name: "BODY RECORD",
-        descrip: "flkadsjfl",
+        descrip: "自分のカラダの記録",
         image: ImageMyRecommend01,
         widht: 300,
         height: 300,
@@ -17,7 +17,7 @@ const cols = [
     {
         id: 2,
         name: "MY EXERCISE",
-        descrip: "flkadsj",
+        descrip: "自分の運動の記録",
         image: ImageMyRecommend02,
         width: 300,
         height: 300,
@@ -25,7 +25,7 @@ const cols = [
     {
         id: 3,
         name: "MY DIARY",
-        descrip: "flkadsj",
+        descrip: "自分の日記",
         image: ImageMyRecommend03,
         width: 300,
         height: 300,

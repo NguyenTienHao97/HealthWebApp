@@ -5,8 +5,8 @@ export const useStyles = makeStyles((theme: Theme) => createStyles({
     container: {
         height: '100vh',
         [theme.breakpoints.up('sm')]: {
-            paddingLeft: '13%',
-            paddingRight: '13%',
+            paddingLeft: 160,
+            paddingRight: 160,
             paddingTop: 20,
             paddingBottom: 20,
         },
@@ -14,15 +14,12 @@ export const useStyles = makeStyles((theme: Theme) => createStyles({
             padding: 20
         }
     },
-    wrapLogin: {
-        padding: 40
-    },
     styleBtnLogin: {
         width: '100%',
         border: '0px',
         paddingTop: 10,
         paddingBottom: 10,
-        background: colors.primary_300,
+        background: `linear-gradient(155.89deg, #FFCC21 8.26%, #FF963C 91.18%)`,
         color: 'white'
     },
     wrapLinkNotRememberPass: {

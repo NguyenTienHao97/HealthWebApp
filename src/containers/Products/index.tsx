@@ -13,58 +13,58 @@ const products = [
     {
         id: 1,
         image: ImageColumn1,
-        dateTime: "",
-        name: "abcdefgh",
-        description: 'flaksdjflkdjfkdjflkdjfldkjfldkjf',
+        dateTime: "2021.05.17 23:25",
+        name: "魚を食べて頭もカラダも元気に！知っておきたい魚を食べるメリ…",
+        description: '#魚料理  #和食  #DHA',
     },
     {
         id: 2,
         image: ImageColumn2,
-        dateTime: "",
-        name: "abcdefgh",
-        description: 'flaksdjflkdjfkdjflkdjfldkjfldkjf',
+        dateTime: "2021.05.17 23:25",
+        name: "魚を食べて頭もカラダも元気に！知っておきたい魚を食べるメリ…",
+        description: '#魚料理  #和食  #DHA',
     },
     {
         id: 3,
         image: ImageColumn3,
-        dateTime: "",
-        name: "abcdefgh",
-        description: 'flaksdjflkdjfkdjflkdjfldkjfldkjf',
+        dateTime: "2021.05.17 23:25",
+        name: "魚を食べて頭もカラダも元気に！知っておきたい魚を食べるメリ…",
+        description: '#魚料理  #和食  #DHA',
     },
     {
         id: 4,
         image: ImageColumn4,
-        dateTime: "",
-        name: "abcdefgh",
-        description: 'flaksdjflkdjfkdjflkdjfldkjfldkjf',
+        dateTime: "2021.05.17 23:25",
+        name: "魚を食べて頭もカラダも元気に！知っておきたい魚を食べるメリ…",
+        description: '#魚料理  #和食  #DHA',
     },
     {
         id: 5,
         image: ImageColumn5,
-        dateTime: "",
-        name: "abcdefgh",
-        description: 'flaksdjflkdjfkdjflkdjfldkjfldkjf',
+        dateTime: "2021.05.17 23:25",
+        name: "魚を食べて頭もカラダも元気に！知っておきたい魚を食べるメリ…",
+        description: '#魚料理  #和食  #DHA',
     },
     {
         id: 6,
         image: ImageColumn6,
-        dateTime: "",
-        name: "abcdefgh",
-        description: 'flaksdjflkdjfkdjflkdjfldkjfldkjf',
+        dateTime: "2021.05.17 23:25",
+        name: "魚を食べて頭もカラダも元気に！知っておきたい魚を食べるメリ…",
+        description: '#魚料理  #和食  #DHA',
     },
     {
         id: 7,
         image: ImageColumn7,
-        dateTime: "",
-        name: "abcdefgh",
-        description: 'flaksdjflkdjfkdjflkdjfldkjfldkjf',
+        dateTime: "2021.05.17 23:25",
+        name: "魚を食べて頭もカラダも元気に！知っておきたい魚を食べるメリ…",
+        description: '#魚料理  #和食  #DHA',
     },
     {
         id: 8,
         image: ImageColumn8,
-        dateTime: "",
-        name: "abcdefgh",
-        description: 'flaksdjflkdjfkdjflkdjfldkjfldkjf',
+        dateTime: "2021.05.17 23:25",
+        name: "魚を食べて頭もカラダも元気に！知っておきたい魚を食べるメリ…",
+        description: '#魚料理  #和食  #DHA',
     }
 ]
 
@@ -78,20 +78,22 @@ function Products(props: any) {
                     products.map((product: any, index: number) => {
                         return (
                             <div key={Math.random() * 1000 + index.toString()} className={classes.girdItem}>
+                                
                                 <img
-                                    style={{objectFit: 'contain', height: 'auto', width: '100%'}}
+                                    className={classes.styleImageProduct}
                                     src={product.image}
                                 />
-                                <div style={{width: 100, position: 'relative', top: -27, left: 0, backgroundColor: 'rgb(255, 204, 56)'}}>
-                                    <p style={{color: 'white', textAlign: 'center', marginTop: 0, paddingTop: 7, paddingBottom: 7, marginBottom: 0, fontSize: 12}}>
-                                        {"2021.05.17 23:25"}
+                                <div className={classes.wrapDateTime}>
+                                    <p className={classes.styleTextDateTime}>
+                                        {product.dateTime}
                                     </p>
                                 </div>
-                                <div style={{padding: 10}}>
-                                    <p style={{fontSize: 18, marginBottom: 0, marginTop: 0}}>
+                                
+                                <div>
+                                    <p className={classes.styleNameProduct}>
                                         {product.name}
                                     </p>
-                                    <p style={{fontSize: 15, color: 'rgb(255, 188, 134)', marginBottom: 0, marginTop: 0}}>
+                                    <p className={classes.styleDescription}>
                                         {product.description}
                                     </p>
                                 </div>
@@ -100,10 +102,10 @@ function Products(props: any) {
                     })
                 }
             </div>
-            <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: 10, marginBottom: 10 }}>
-                <button style={{ borderRadius: 5, border: '0px solid grey', width: 200, backgroundImage:  `linear-gradient(to right, rgb(255, 204, 56), rgb(225, 181, 58), rgb(225, 150, 67)`}}>
+            <div className={classes.wrapBtn}>
+                <button className={classes.styleBtn}>
                     <p style={{color: 'white'}}>
-                        {"Load more...."}
+                        {"コラムをもっと見る"}
                     </p>
                 </button>
             </div>

@@ -9,10 +9,8 @@ import { useNavigate } from 'react-router-dom';
 
 function Login() {
     const [userName, setUserName] = useState<any>({ value: "", error: "" });
-    const [isLoading, setLoading] = useState<any>(false);
     const [password, setPassword] = useState<any>({ value: "", error: "" });
     const [showPass, setShowPass] = useState<any>(false);
-    const [isRememberMe, setIsRememberMe] = useState<any>(false);
     const [cookies, setCookies] = useCookies(['access_token']);
     const navigate = useNavigate();
     const classes = useStyles();
@@ -50,10 +48,6 @@ function Login() {
         setShowPass(!showPass);
     }
 
-    function handleChangeRememberMe(e: React.ChangeEvent<HTMLInputElement>) {
-        setIsRememberMe(e.target.checked);
-    }
-
     function handleKeyEnter(e: any) {
         if (e.which === 13) {
             onLogin();
@@ -62,7 +56,7 @@ function Login() {
 
     return (
         <Grid className={classes.container} container item justifyContent="center" xl={12} lg={12} xs={12} md={12} sm={12}>
-            <Grid className={classes.wrapLogin} item xl={12} lg={12} xs={12} md={12} sm={12}>
+            <Grid item xl={12} lg={12} xs={12} md={12} sm={12}>
                 <div className={classes.wrapTextTitle}>
                     <p className={classes.styletextTitle}>{"Đăng nhập"}</p>
                 </div>

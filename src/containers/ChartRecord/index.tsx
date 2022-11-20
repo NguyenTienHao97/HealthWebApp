@@ -17,43 +17,49 @@ function usehooksHoc(Component: any) {
 
 const data = [
   {
-    name: '1',
+    name: '6 月',
     uv: 4000,
     pv: 2400,
     amt: 2400,
   },
   {
-    name: '2',
+    name: '7 月',
     uv: 3000,
     pv: 1398,
     amt: 2210,
   },
   {
-    name: '3',
+    name: '8 月',
     uv: 2000,
     pv: 9800,
     amt: 2290,
   },
   {
-    name: '4',
+    name: '9 月',
     uv: 2780,
     pv: 3908,
     amt: 2000,
   },
   {
-    name: '5',
+    name: '10 月',
     uv: 1890,
     pv: 4800,
     amt: 2181,
   },
   {
-    name: '6',
+    name: '11 月',
     uv: 2390,
     pv: 3800,
     amt: 2500,
   },
   {
-    name: '7',
+    name: '12 月',
+    uv: 3490,
+    pv: 4300,
+    amt: 2100,
+  },
+  {
+    name: '1 月',
     uv: 3490,
     pv: 4300,
     amt: 2100,
@@ -77,17 +83,19 @@ class CustomizedAxisTick extends PureComponent {
 class ChartRecord extends PureComponent {
   constructor(props: any) {
     super(props);
+
   }
 
   render() {
     const props: any = this.props;
+
     return (
       <div ref={props.charRecordRef} className={props.classes.container}>
-        <div style={{ flex: 1, display: 'flex', margin: 5 }}>
-          <p style={{ color: 'white', marginRight: 5 }}>
+        <div className={props.classes.wrapDateTime}>
+          <p className={props.classes.styleLabel}>
             {"BODY RECORD"}
           </p>
-          <p style={{ color: 'white' }}>
+          <p className={props.classes.styleTextDateTime}>
             {"2021.05.21"}
           </p>
         </div>
@@ -99,32 +107,32 @@ class ChartRecord extends PureComponent {
             syncId="anyId"
             margin={{
               top: 10,
-              right: 30,
-              left: 0,
+              right: 40,
+              left: 40,
               bottom: 0,
             }}
           >
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="name" height={60} tick={<CustomizedAxisTick />} />
-            <Line type="monotone" dataKey="uv" stroke="#8884d8" fill="#8884d8" />
-            <Line type="monotone" dataKey="pv" stroke="#82ca9d" />
+            <Line strokeWidth={4} type="monotone" dataKey="uv" stroke="#FFCC21" fill="#FFCC21" />
+            <Line strokeWidth={4} type="monotone" dataKey="pv" stroke="#8FE9D0" fill="#8FE9D0" />
           </LineChart>
         </ResponsiveContainer>
-        <div style={{flex: 1, display: 'flex', alignItems: 'center', padding: 20,}}>
-          <button style={{width: 70, height: 30, backgroundColor: 'white', borderRadius: 15, color: 'rgb(255, 204, 56)', borderWidth: 0}}>
-            button1
+        <div className={props.classes.wrapBtn}>
+          <button className={props.classes.styleBtn}>
+            {"日"}
           </button>
-          <div style={{width: 5}}></div>
-          <button style={{width: 70, height: 30, backgroundColor: 'white', borderRadius: 15, color: 'rgb(255, 204, 56)', borderWidth: 0}}>
-            button2
+          <div style={{ width: 5 }}></div>
+          <button className={props.classes.styleBtn}>
+            {"週"}
           </button>
-          <div style={{width: 5}}></div>
-          <button style={{width: 70, height: 30, backgroundColor: 'white', borderRadius: 15, color: 'rgb(255, 204, 56)', borderWidth: 0}}>
-            button3
+          <div style={{ width: 5 }}></div>
+          <button className={props.classes.styleBtn}>
+            {"月"}
           </button>
-          <div style={{width: 5}}></div>
-          <button style={{width: 70, height: 30, backgroundColor: 'rgb(255, 204, 56)', borderRadius: 15, color: 'white', fontWeight: 'bold', borderWidth: 1,}}>
-            button4
+          <div style={{ width: 5 }}></div>
+          <button className={props.classes.styleBtnActive}>
+            {"年"}
           </button>
         </div>
       </div>

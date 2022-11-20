@@ -4,26 +4,26 @@ import { useStyles } from './styles';
 const exercises = [
     {
         id: 1,
-        name: "abcdefghjklm",
-        weight: "26 kg",
+        name: "家事全般（立位・軽い）",
+        weight: "26kcal",
         time: "10 min"
     },
     {
         id: 2,
-        name: "abcdefghjklm",
-        weight: "27 kg",
+        name: "家事全般（立位・軽い）",
+        weight: "26kcal",
         time: "10 min"
     },
     {
         id: 3,
-        name: "abcdefghjklm",
-        weight: "26 kg",
+        name: "家事全般（立位・軽い）",
+        weight: "26kcal",
         time: "10 min"
     },
     {
         id: 4,
-        name: "abcdefghjklm",
-        weight: "27 kg",
+        name: "家事全般（立位・軽い）",
+        weight: "26kcal",
         time: "10 min"
     }
 ]
@@ -31,38 +31,38 @@ const exercises = [
 const exercises1 = [
     {
         id: 1,
-        name: "abcdefghjklm",
-        weight: "26 kg",
+        name: "家事全般（立位・軽い）",
+        weight: "26kcal",
         time: "10 min"
     },
     {
         id: 2,
-        name: "abcdefghjklm",
-        weight: "27 kg",
+        name: "家事全般（立位・軽い）",
+        weight: "26kcal",
         time: "10 min"
     },
     {
         id: 3,
-        name: "abcdefghjklm",
-        weight: "26 kg",
+        name: "家事全般（立位・軽い）",
+        weight: "26kcal",
         time: "10 min"
     },
     {
         id: 4,
-        name: "abcdefghjklm",
-        weight: "27 kg",
+        name: "家事全般（立位・軽い）",
+        weight: "26kcal",
         time: "10 min"
     },
     {
         id: 5,
-        name: "abcdefghjklm",
-        weight: "26 kg",
+        name: "家事全般（立位・軽い）",
+        weight: "26kcal",
         time: "10 min"
     },
     {
         id: 6,
-        name: "abcdefghjklm",
-        weight: "27 kg",
+        name: "家事全般（立位・軽い）",
+        weight: "26kcal",
         time: "10 min"
     }
 ]
@@ -73,7 +73,6 @@ function MyExercises(props: any) {
     function renderItem(item: any, index: number) {
         return (
             <li key={Math.random() * 10000 + index.toString()} className={classes.styleLi}>
-
                 <div className={classes.wrapList}>
                     <div style={{ flex: 9 }}>
                         <p className={classes.styleText}>{item.name}</p>
@@ -96,7 +95,7 @@ function MyExercises(props: any) {
                 <p className={classes.styleTextDateTime}>{"2021.05.21"}</p>
             </div>
             <div className={classes.wrapTable}>
-                <ul style={exercises.length >= 6 ? { overflowY: 'scroll', scrollbarColor: "#6b6b6b #2b2b2b", } : {}} className={classes.styleUl}>
+                <ul style={exercises.length >= 4 ? { overflowY: 'scroll', scrollbarColor: "#6b6b6b #2b2b2b", } : {}} className={classes.styleUl}>
                     {
                         exercises.map((ex: any, index: number) => {
                             return renderItem(ex, index);

@@ -8,10 +8,10 @@ function CircularProgressWithLabel(
     props: CircularProgressProps & { value: number },
 ) {
     const classes: any = useStyles();
-    
+
     return (
         <Box sx={{ position: 'relative', display: 'inline-flex' }}>
-            <CircularProgress thickness={1} size={5} style={{width: 181, height: 181, color:"white"}} variant="determinate" {...props} />
+            <CircularProgress thickness={1} size={5} style={{ width: 181, height: 181, color: "white" }} variant="determinate" {...props} />
             <Box
                 sx={{
                     top: 0,
@@ -25,7 +25,7 @@ function CircularProgressWithLabel(
                 }}
             >
                 <Typography
-                    style={{color: 'white'}}
+                    style={{ color: 'white' }}
                     variant="caption"
                     component="div"
                 >{`06/21 ${Math.round(props.value)}%`}</Typography>
@@ -34,7 +34,7 @@ function CircularProgressWithLabel(
     );
 }
 
-export default function ProgressCircle() {
+export default React.memo(function ProgressCircle() {
     const [progress, setProgress] = React.useState(15);
 
     React.useEffect(() => {
@@ -47,4 +47,4 @@ export default function ProgressCircle() {
     }, []);
 
     return <CircularProgressWithLabel value={progress} />;
-}
+})

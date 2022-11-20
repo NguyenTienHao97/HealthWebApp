@@ -3,13 +3,14 @@ import { useStyles } from './styles';
 import RecordCols from '../../containers/RecordCols';
 import ChartRecord from '../../containers/ChartRecord';
 import MyDiarys from '../../containers/MyDiarys';
-import ImageIconArrow from '../../assets/arrow.png';
+import ImageIconArrow from '../../assets/svgs/icon_scroll.svg';
 import MyExercises from '../../containers/MyExercises';
 import { useCookies } from 'react-cookie';
 import { useNavigate } from 'react-router-dom';
 import { getDiaries } from '../../apis/record';
 import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
+import NotLogin from '../../components/NotLogin';
 
 function Record(props: any) {
     const classes: any = useStyles();
@@ -75,7 +76,7 @@ function Record(props: any) {
                             />
                             {
                                 loading ? (
-                                    <Box sx={{ display: 'flex', alignItems: 'center', paddingTop: 10, paddingBottom: 10, justifyContent: 'center', }}>
+                                    <Box className={classes.wrapLoading}>
                                         <CircularProgress />
                                     </Box>
                                 ) : (
@@ -98,12 +99,7 @@ function Record(props: any) {
                         </div>
                     </>
                 ) : (
-                    <div style={{ flex: 1, height: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
-                        <p>{"Bạn chưa đăng nhập!"}</p>
-                        <button style={{ height: 50, width: 200 }} onClick={() => navigate("/login")}>
-                            {"Đăng nhập"}
-                        </button>
-                    </div>
+                    <NotLogin />
                 )
             }
         </div>
